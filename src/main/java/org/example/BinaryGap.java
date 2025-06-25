@@ -15,12 +15,10 @@ public class BinaryGap {
 
     public static int binaryGap(int N) {
         String binary = Integer.toBinaryString(N);
-        System.out.println("Binary number is : " + binary);
         Boolean newGap = false;
         Integer currentGap = 0;
         Integer maxGap = 0;
         // Iterate through the binary
-
         for (int i = 0; i < binary.length(); i++) {
             // Identify the first '1'
             if (binary.charAt(i) == '1') {

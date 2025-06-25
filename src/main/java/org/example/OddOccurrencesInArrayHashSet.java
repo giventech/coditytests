@@ -39,12 +39,20 @@ import java.util.Set;
 
 public class OddOccurrencesInArrayHashSet {
     public static void main(String[] args) {
+
+        // Allow user to choose between XOR and HashSet solutions
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        System.out.println("Choose solution type (1 for XOR, 2 for HashSet):");
+        int choice = scanner.nextInt();
+
         int[] A = {9, 3, 9, 3, 9, 7, 9};
-        int result = solution(A);
+        int result = (choice == 1) ? solutionXOR(A) : solution(A);
         System.out.println("The unpaired element is: " + result);
         
 
     }
+    
+
 
 
     public static  int solution(int[] A) {
@@ -59,5 +67,13 @@ public class OddOccurrencesInArrayHashSet {
         }
 
         return toggle.iterator().next(); // The remaining "on" element
+    }
+
+    public static int solutionXOR(int[] A) {
+        int unpaired = 0;
+        for (int num : A) {
+            unpaired ^= num; // XOR all elements
+        }
+        return unpaired; // The remaining number is the unpaired one
     }
 }

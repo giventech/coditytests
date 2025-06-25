@@ -48,7 +48,7 @@ public class OddOccurrencesInArrayHashSet {
         int[] A = {9, 3, 9, 3, 9, 7, 9};
         int result = (choice == 1) ? solutionXOR(A) : solution(A);
         System.out.println("The unpaired element is: " + result);
-        
+
 
     }
     

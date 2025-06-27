@@ -6,7 +6,6 @@ import java.util.*;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class PermCheck {
     public static void main(String[] args) {
-
         //Write an initial value for and array and run solution method, make sure that you can print the result
         int[] A = {4, 1, 3, 6};
         //Print the result of the solution method says it is a permutation or not
@@ -28,6 +27,27 @@ public class PermCheck {
         }
         return 1;
     }
+
+
+
+    ///  write another method based on the premise below
+    //    A permutation of 1 to N has a unique mathematical property: its sum is always the same.
+    //    The sum of numbers 1 + 2 + 3 + ... + N follows the formula:
+    //    Sum = N × (N + 1) ÷ 2
+
+    public static int solution(int[] A) {
+        int N = A.length;
+        long expectedSum = (long) N * (N + 1) / 2;
+        long actualSum = 0;
+
+        for (int value : A) {
+            if (value < 1 || value > N) return 0;
+            actualSum += value;
+        }
+
+        return actualSum == expectedSum ? 1 : 0;
+    }
+
 
 
 }

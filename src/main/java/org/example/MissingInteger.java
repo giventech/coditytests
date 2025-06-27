@@ -13,11 +13,6 @@ public class MissingInteger {
         //Print the result of the solution method
         System.out.println("The missing integer is: " + solution(A));
         System.out.println("The missing integer is: " + solutionWithHashSet(A));
-
-
-
-
-
     }
     public static int solution(int[] A) {
         int missingInteger = 0;
